@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedAnniversary: Anniversay?
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        NavigationView {
+            NavigationMaster(selectedAnniversary: $selectedAnniversary)
+            
+            if selectedAnniversary != nil {
+                NavigationDetail(anniversary: selectedAnniversary!)
+            }
+        }
+        .frame(minWidth: 700, minHeight: 500)
     }
 }
 
@@ -19,5 +27,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .environmentObject(Anniversaries())
     }
 }

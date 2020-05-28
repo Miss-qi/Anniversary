@@ -13,13 +13,22 @@ struct AnniversaryRow: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Text(anniversary.name)
-                .font(.body)
-                .frame(width: 50, alignment: .center)
-                .padding()
-            Text(anniversary.date)
-                .font(.headline)
-                .frame(width: 150, alignment: .center)
+            VStack {
+                Text(anniversary.name)
+                    .frame(height: 20)
+                Text(anniversary.date)
+                    .frame(height: 20)
+            }
+            .padding()
+
+            HStack {
+                Text("已经过了")
+                Text("\(getCountdownDate)")
+                Text("天")
+                Spacer()
+            }
+            .padding()
+
             Spacer()
         }
         .frame(maxWidth: .infinity, minHeight: 50, maxHeight: 50)
@@ -30,6 +39,18 @@ struct AnniversaryRow: View {
             .fill(tagColor.opacity(0.6)))
     }
     
+    var getCountdownDate: String {
+//        let rome = Region(calendar: Calendars.chinese, zone: Zones.asiaShanghai, locale: Locales.chineseChina)
+//        let dateA = DateInRegion("2017-07-22 00:00:00", format: "YYYY-MM-dd", region: rome)!
+//        let dateB = DateInRegion("2017-07-23 12:00:00", format: "YYYY-MM-dd", region: rome)!
+//        let days = dateA?.getInterval(toDate: dateB, component: .day)
+//        if days != nil {
+//            return String(days)
+//        }
+//        return "0"
+        
+        return "100"
+    }
 
     var tagColor: Color {
         if anniversary.tag == "work" {

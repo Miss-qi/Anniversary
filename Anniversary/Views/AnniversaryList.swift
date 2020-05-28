@@ -10,20 +10,29 @@ import SwiftUI
 
 struct AnniversaryList: View {
     @EnvironmentObject private var anniversaies: Anniversaries
+    @Binding var selectedAnniversary: Anniversay?
 
     var body: some View {
-        return List() {
-            ForEach(anniversaies.data) {
-                anniversary in
-                AnniversaryRow(anniversary: anniversary)
+        return VStack {
+            Button("add item" ,action: addItem)
+                .frame(height: 50)
+            List(selection: $selectedAnniversary) {
+                ForEach(anniversaies.data) {
+                    anniversary in
+                    AnniversaryRow(anniversary: anniversary).tag(anniversary)
+                }
             }
         }
+    }
+    
+    func addItem() {
+        
     }
 }
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryList()
+        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]))
         .environmentObject(Anniversaries())
     }
 }
