@@ -11,6 +11,7 @@ import SwiftUI
 struct AnniversaryList: View {
     @EnvironmentObject private var anniversaies: Anniversaries
     @Binding var selectedAnniversary: Anniversay?
+    @Binding var createAnniversary: Bool?
 
     var body: some View {
         return VStack {
@@ -26,13 +27,13 @@ struct AnniversaryList: View {
     }
     
     func addItem() {
-        
+        createAnniversary = true
     }
 }
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]))
+        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]), createAnniversary: .constant(false))
         .environmentObject(Anniversaries())
     }
 }

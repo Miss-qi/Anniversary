@@ -10,9 +10,10 @@ import SwiftUI
 
 struct NavigationMaster: View {
     @Binding var selectedAnniversary: Anniversay?
+    @Binding var createAnniversary: Bool?
     var body: some View {
         VStack {
-            AnniversaryList(selectedAnniversary: $selectedAnniversary)
+            AnniversaryList(selectedAnniversary: $selectedAnniversary, createAnniversary: $createAnniversary)
                 .listStyle(SidebarListStyle())
         }
         .frame(minWidth: 400, maxWidth: 500)
@@ -21,7 +22,7 @@ struct NavigationMaster: View {
 
 struct NavigationMaster_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationMaster(selectedAnniversary: .constant(anniversaies[1]))
+        NavigationMaster(selectedAnniversary: .constant(anniversaies[1]), createAnniversary: .constant(false))
             .environmentObject(Anniversaries())
     }
 }

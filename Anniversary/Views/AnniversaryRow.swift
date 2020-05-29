@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftDate
 
 struct AnniversaryRow: View {
     var anniversary: Anniversay
@@ -40,8 +41,9 @@ struct AnniversaryRow: View {
     }
     
     var getCountdownDate: String {
-//        let rome = Region(calendar: Calendars.chinese, zone: Zones.asiaShanghai, locale: Locales.chineseChina)
-//        let dateA = DateInRegion("2017-07-22 00:00:00", format: "YYYY-MM-dd", region: rome)!
+        let dateA = DateInRegion(anniversary.date)!
+        print("data1111：", dateA.date)
+        print("data2222：", DateInRegion())
 //        let dateB = DateInRegion("2017-07-23 12:00:00", format: "YYYY-MM-dd", region: rome)!
 //        let days = dateA?.getInterval(toDate: dateB, component: .day)
 //        if days != nil {

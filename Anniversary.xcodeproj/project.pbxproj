@@ -24,6 +24,7 @@
 		7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */; };
 		7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */; };
 		7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */; };
+		7F8EBD812480BB72005D96DD /* AnniversaryCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryDetail.swift; sourceTree = "<group>"; };
 		7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMaster.swift; sourceTree = "<group>"; };
 		7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDetail.swift; sourceTree = "<group>"; };
+		7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryCreate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */,
 				7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */,
 				7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */,
+				7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */,
 				7F8EBD39247F50F0005D96DD /* AppDelegate.swift in Sources */,
 				7F8EBD70247F5704005D96DD /* Data.swift in Sources */,
+				7F8EBD812480BB72005D96DD /* AnniversaryCreate.swift in Sources */,
 				7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
