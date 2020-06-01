@@ -11,32 +11,35 @@ import SwiftUI
 struct AnniversaryList: View {
     @EnvironmentObject private var anniversaies: Anniversaries
     @Binding var selectedAnniversary: Anniversay?
-    @Binding var createAnniversary: Bool?
 
     var body: some View {
         return VStack {
             Button("添加" ,action: addItem)
                 .frame(maxWidth: .infinity, maxHeight: 40)
                 .buttonStyle(BorderlessButtonStyle())
-            
 
             List(selection: $selectedAnniversary) {
                 ForEach(anniversaies.data) {
                     anniversary in
-                    AnniversaryRow(anniversary: anniversary).tag(anniversary)
+                    AnniversaryRow(anniversary: anniversary)
+                        .tag(anniversary)
+                        .onTapGesture() {
+                            self.anniversaies.createAnniversary = false
+                            self.selectedAnniversary = anniversary
+                        }
                 }
             }
         }
     }
-    
+
     func addItem() {
-        createAnniversary = true
+        self.anniversaies.createAnniversary = true
     }
 }
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]), createAnniversary: .constant(false))
+        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]))
         .environmentObject(Anniversaries())
     }
 }

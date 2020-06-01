@@ -18,9 +18,8 @@ struct AnniversaryCreate: View {
 
     @State private var anniversaryDate = Date()
     @State var name: String = "纪念日"
-    @State private var selectedTag = 0
-    
-    
+    @State private var selectedTag = "work"
+
 
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -32,14 +31,14 @@ struct AnniversaryCreate: View {
                     .foregroundColor(.blue)
             }
                 .frame(width: 200)
-            
+
             HStack {
                 DatePicker(selection: $anniversaryDate, in: ...Date(), displayedComponents: .date) {
                     Text("日期")
                 }
             }
                 .frame(width: 200)
-            
+
             HStack {
                 Picker(selection: $selectedTag, label: Text("类型")) {
                    ForEach(0 ..< tags.count) {

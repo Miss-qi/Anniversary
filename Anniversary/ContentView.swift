@@ -10,21 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedAnniversary: Anniversay?
-    @State private var createAnniversary: Bool?
-    
+
     var body: some View {
         NavigationView {
-            NavigationMaster(selectedAnniversary: $selectedAnniversary, createAnniversary: $createAnniversary)
-            
-            if createAnniversary == true {
-                AnniversaryCreate()
-            }
-            
-            if selectedAnniversary != nil {
-                NavigationDetail(anniversary: selectedAnniversary!)
-            }
+            NavigationMaster(selectedAnniversary: $selectedAnniversary)
+            NavigationDetail(selectedAnniversary: selectedAnniversary)
         }
-        .frame(minWidth: 700, minHeight: 500)
+            .frame(minWidth: 700, minHeight: 500)
     }
 }
 

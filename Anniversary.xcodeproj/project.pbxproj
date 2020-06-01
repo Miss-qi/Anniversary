@@ -25,6 +25,9 @@
 		7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */; };
 		7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */; };
 		7F8EBD812480BB72005D96DD /* AnniversaryCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */; };
+		7F8EBD8E2484AF20005D96DD /* Anniversary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD8C2484AF20005D96DD /* Anniversary.xcdatamodeld */; };
+		7F8EBD922484B0F1005D96DD /* Anniversary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD902484B0F1005D96DD /* Anniversary+CoreDataClass.swift */; };
+		7F8EBD932484B0F1005D96DD /* Anniversary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD912484B0F1005D96DD /* Anniversary+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMaster.swift; sourceTree = "<group>"; };
 		7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDetail.swift; sourceTree = "<group>"; };
 		7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryCreate.swift; sourceTree = "<group>"; };
+		7F8EBD8D2484AF20005D96DD /* Anniversary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Anniversary.xcdatamodel; sourceTree = "<group>"; };
+		7F8EBD902484B0F1005D96DD /* Anniversary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anniversary+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7F8EBD912484B0F1005D96DD /* Anniversary+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anniversary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 		7F8EBD37247F50F0005D96DD /* Anniversary */ = {
 			isa = PBXGroup;
 			children = (
+				7F8EBD8F2484B048005D96DD /* Data */,
 				7F8EBD6E247F56F1005D96DD /* Services */,
 				7F8EBD69247F537D005D96DD /* Resources */,
 				7F8EBD68247F5321005D96DD /* Models */,
@@ -186,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7F8EBD6A247F55DE005D96DD /* anniversaries.json */,
+				7F8EBD8C2484AF20005D96DD /* Anniversary.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -197,6 +205,15 @@
 				7F8EBD75247F678F005D96DD /* Anniversaries.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7F8EBD8F2484B048005D96DD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F8EBD902484B0F1005D96DD /* Anniversary+CoreDataClass.swift */,
+				7F8EBD912484B0F1005D96DD /* Anniversary+CoreDataProperties.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +356,13 @@
 			files = (
 				7F8EBD6D247F560E005D96DD /* Anniversary.swift in Sources */,
 				7F8EBD72247F5780005D96DD /* AnniversaryRow.swift in Sources */,
+				7F8EBD8E2484AF20005D96DD /* Anniversary.xcdatamodeld in Sources */,
+				7F8EBD922484B0F1005D96DD /* Anniversary+CoreDataClass.swift in Sources */,
 				7F8EBD76247F678F005D96DD /* Anniversaries.swift in Sources */,
 				7F8EBD74247F578E005D96DD /* AnniversaryList.swift in Sources */,
 				7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */,
 				7F8EBD3B247F50F0005D96DD /* ContentView.swift in Sources */,
+				7F8EBD932484B0F1005D96DD /* Anniversary+CoreDataProperties.swift in Sources */,
 				7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */,
 				7F8EBD39247F50F0005D96DD /* AppDelegate.swift in Sources */,
 				7F8EBD70247F5704005D96DD /* Data.swift in Sources */,
@@ -688,6 +708,19 @@
 			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7F8EBD8C2484AF20005D96DD /* Anniversary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F8EBD8D2484AF20005D96DD /* Anniversary.xcdatamodel */,
+			);
+			currentVersion = 7F8EBD8D2484AF20005D96DD /* Anniversary.xcdatamodel */;
+			path = Anniversary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7F8EBD2D247F50F0005D96DD /* Project object */;
 }

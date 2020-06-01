@@ -10,22 +10,22 @@ import SwiftUI
 
 struct NavigationDetail: View {
     @EnvironmentObject var anniversaies: Anniversaries
-    var anniversary: Anniversay
-    
-    var anniversaryIndex: Int {
-        anniversaies.data.firstIndex(where: { $0.id == anniversary.id })!
-    }
+    var selectedAnniversary: Anniversay?
 
     var body: some View {
         ScrollView {
-            AnniversaryDetail(anniversary: anniversary)
+            if anniversaies.createAnniversary == true {
+                AnniversaryCreate()
+            } else if selectedAnniversary != nil {
+                AnniversaryDetail(anniversary: selectedAnniversary!)
+            }
         }
     }
 }
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationDetail(anniversary: anniversaies[0])
+        NavigationDetail(selectedAnniversary: anniversaies[0])
         .environmentObject(Anniversaries())
     }
 }

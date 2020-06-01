@@ -33,10 +33,4 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-enum TagColors: String, CaseIterable, Codable, Hashable {
-    case life = "Life"
-    case work = "Work"
-    case anniversary = "Anniversay"
-}
-
 
