@@ -21,7 +21,7 @@ struct NavigationMaster: View {
 
 struct NavigationMaster_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationMaster(selectedAnniversary: .constant(anniversaies[1]))
+        NavigationMaster(selectedAnniversary: .constant(anniversaries[1]))
             .environmentObject(Anniversaries())
     }
 }

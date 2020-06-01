@@ -10,6 +10,6 @@ import SwiftUI
 import Combine
 
 final class Anniversaries: ObservableObject {
-    @Published var data = anniversaies
+    @Published var data = anniversaries
     @Published var createAnniversary: Bool = false
 }

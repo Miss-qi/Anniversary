@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-let anniversaies: [Anniversay] = load("anniversaries.json")
+let anniversaries: [Anniversay] = load("anniversaries.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

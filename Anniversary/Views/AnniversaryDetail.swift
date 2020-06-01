@@ -26,8 +26,8 @@ struct AnniversaryDetail: View {
                     Text(anniversary.date)
                 }
             }
-            .frame(width: 200)
-            .padding()
+                .frame(width: 200)
+                .padding()
         }
         .padding()
         .frame(maxWidth: 700)
@@ -36,6 +36,6 @@ struct AnniversaryDetail: View {
 
 struct AnniversaryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryDetail(anniversary: anniversaies[0])
+        AnniversaryDetail(anniversary: anniversaries[0])
     }
 }

@@ -39,7 +39,7 @@ struct AnniversaryList: View {
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryList(selectedAnniversary: .constant(anniversaies[0]))
+        AnniversaryList(selectedAnniversary: .constant(anniversaries[0]))
         .environmentObject(Anniversaries())
     }
 }

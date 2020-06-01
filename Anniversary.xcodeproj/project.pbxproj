@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,6 @@
 		7F8EBD72247F5780005D96DD /* AnniversaryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD71247F5780005D96DD /* AnniversaryRow.swift */; };
 		7F8EBD74247F578E005D96DD /* AnniversaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD73247F578E005D96DD /* AnniversaryList.swift */; };
 		7F8EBD76247F678F005D96DD /* Anniversaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD75247F678F005D96DD /* Anniversaries.swift */; };
-		7F8EBD79247FA9AB005D96DD /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 7F8EBD78247FA9AB005D96DD /* SwiftDate */; };
 		7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */; };
 		7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */; };
 		7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */; };
@@ -82,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8EBD79247FA9AB005D96DD /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +231,6 @@
 			);
 			name = Anniversary;
 			packageProductDependencies = (
-				7F8EBD78247FA9AB005D96DD /* SwiftDate */,
 			);
 			productName = Anniversary;
 			productReference = 7F8EBD35247F50F0005D96DD /* Anniversary.app */;
@@ -308,7 +305,6 @@
 			);
 			mainGroup = 7F8EBD2C247F50F0005D96DD;
 			packageReferences = (
-				7F8EBD77247FA9AB005D96DD /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 7F8EBD36247F50F0005D96DD /* Products */;
 			projectDirPath = "";
@@ -689,25 +685,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7F8EBD77247FA9AB005D96DD /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7F8EBD78247FA9AB005D96DD /* SwiftDate */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7F8EBD77247FA9AB005D96DD /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDate;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7F8EBD8C2484AF20005D96DD /* Anniversary.xcdatamodeld */ = {

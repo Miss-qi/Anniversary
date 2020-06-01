@@ -25,7 +25,7 @@ struct NavigationDetail: View {
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationDetail(selectedAnniversary: anniversaies[0])
+        NavigationDetail(selectedAnniversary: anniversaries[0])
         .environmentObject(Anniversaries())
     }
 }
