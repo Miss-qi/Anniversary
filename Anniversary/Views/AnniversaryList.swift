@@ -15,8 +15,11 @@ struct AnniversaryList: View {
 
     var body: some View {
         return VStack {
-            Button("add item" ,action: addItem)
-                .frame(height: 50)
+            Button("添加" ,action: addItem)
+                .frame(maxWidth: .infinity, maxHeight: 40)
+                .buttonStyle(BorderlessButtonStyle())
+            
+
             List(selection: $selectedAnniversary) {
                 ForEach(anniversaies.data) {
                     anniversary in

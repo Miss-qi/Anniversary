@@ -14,6 +14,9 @@ struct AnniversaryRow: View {
 
     var body: some View {
         HStack(alignment: .center) {
+            Text(anniversary.tag)
+                .frame(width: 100)
+            
             VStack {
                 Text(anniversary.name)
                     .frame(height: 20)
