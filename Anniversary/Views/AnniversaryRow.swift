@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnniversaryRow: View {
-    var anniversary: Anniversay
+    var anniversary: AnniversaryData
 
     var body: some View {
         HStack(alignment: .center) {
@@ -19,8 +19,8 @@ struct AnniversaryRow: View {
             VStack {
                 Text(anniversary.name)
                     .frame(height: 20)
-                Text(anniversary.date)
-                    .frame(height: 20)
+//                Text(anniversary.date)
+//                    .frame(height: 20)
             }
             .padding()
 
@@ -67,7 +67,12 @@ struct AnniversaryRow: View {
 
 struct AnniversaryRow_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryRow(anniversary: anniversaries[0])
+        let data = AnniversaryData()
+        data.name = "name"
+        data.id = UUID()
+        data.tag = "work"
+        data.isTop = false
+        return AnniversaryRow(anniversary: data)
     }
 }
 

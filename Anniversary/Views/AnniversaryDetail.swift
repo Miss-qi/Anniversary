@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnniversaryDetail: View {
-    var anniversary: Anniversay
+    var anniversary: AnniversaryData
 
     var body: some View {
         VStack(alignment: .center) {
@@ -23,7 +23,7 @@ struct AnniversaryDetail: View {
                     .font(.body)
                 HStack {
                     Text("起始日：")
-                    Text(anniversary.date)
+//                    Text(anniversary.date)
                 }
             }
                 .frame(width: 200)
@@ -36,6 +36,12 @@ struct AnniversaryDetail: View {
 
 struct AnniversaryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryDetail(anniversary: anniversaries[0])
+        let data = AnniversaryData()
+        data.name = ""
+        data.id = UUID()
+        data.tag = "work"
+        data.isTop = false
+
+        return AnniversaryDetail(anniversary: data)
     }
 }

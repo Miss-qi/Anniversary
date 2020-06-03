@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NavigationMaster: View {
-    @Binding var selectedAnniversary: Anniversay?
+    @Binding var selectedAnniversary: AnniversaryData?
     var body: some View {
         VStack {
             AnniversaryList(selectedAnniversary: $selectedAnniversary)
@@ -21,7 +21,13 @@ struct NavigationMaster: View {
 
 struct NavigationMaster_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationMaster(selectedAnniversary: .constant(anniversaries[1]))
+        let data = AnniversaryData()
+        data.name = ""
+        data.id = UUID()
+        data.tag = "work"
+        data.isTop = false
+        
+        return NavigationMaster(selectedAnniversary: .constant(data))
             .environmentObject(Anniversaries())
     }
 }

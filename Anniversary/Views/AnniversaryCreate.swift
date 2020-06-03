@@ -18,7 +18,7 @@ struct AnniversaryCreate: View {
 
     @State private var anniversaryDate = Date()
     @State var name: String = "纪念日"
-    @State private var selectedTag = "work"
+    @State private var selectedTag = 0
 
 
     var body: some View {
@@ -32,25 +32,42 @@ struct AnniversaryCreate: View {
             }
                 .frame(width: 200)
 
-            HStack {
-                DatePicker(selection: $anniversaryDate, in: ...Date(), displayedComponents: .date) {
-                    Text("日期")
-                }
+            DatePicker(selection: $anniversaryDate, in: ...Date(), displayedComponents: .date) {Text("日期")}
+                 .frame(width: 200)
+
+            Picker(selection: $selectedTag, label: Text("类型")) {
+               ForEach(0 ..< tags.count) {
+                  Text(self.tags[$0])
+               }
             }
                 .frame(width: 200)
 
-            HStack {
-                Picker(selection: $selectedTag, label: Text("类型")) {
-                   ForEach(0 ..< tags.count) {
-                      Text(self.tags[$0])
-                   }
-                }
+            Button(action: createAnniversary) {
+                Text("Submit")
             }
                 .frame(width: 200)
             Spacer()
         }
         .padding()
         .frame(maxWidth: 700)
+    }
+
+    func createAnniversary() {
+//        let anniversary = AnniversaryData(context: context)
+//        anniversary.id = UUID()
+//        anniversary.name = name
+//        anniversary.date = anniversaryDate
+//        anniversary.tag = tags[selectedTag]
+//        anniversary.isTop = false
+
+//         appDelegate.saveContext()
+//         print(name, anniversaryDate, tags[selectedTag])
+//         do {
+//             let data = try context.fetch(AnniversaryData.fetchRequest())
+//             print("second data", data)
+//         } catch {
+//             print("error")
+//         }
     }
 }
 

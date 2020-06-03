@@ -10,22 +10,30 @@ import SwiftUI
 
 struct NavigationDetail: View {
     @EnvironmentObject var anniversaies: Anniversaries
-    var selectedAnniversary: Anniversay?
+    var selectedAnniversary: AnniversaryData?
 
     var body: some View {
-        ScrollView {
+        VStack {
+            Spacer()
             if anniversaies.createAnniversary == true {
                 AnniversaryCreate()
             } else if selectedAnniversary != nil {
                 AnniversaryDetail(anniversary: selectedAnniversary!)
             }
+            Spacer()
         }
     }
 }
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationDetail(selectedAnniversary: anniversaries[0])
+        let data = AnniversaryData()
+        data.name = ""
+        data.id = UUID()
+        data.tag = "work"
+        data.isTop = false
+        
+        return NavigationDetail(selectedAnniversary: data)
         .environmentObject(Anniversaries())
     }
 }

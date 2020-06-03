@@ -10,7 +10,13 @@ import SwiftUI
 
 struct AnniversaryList: View {
     @EnvironmentObject private var anniversaies: Anniversaries
-    @Binding var selectedAnniversary: Anniversay?
+    @Binding var selectedAnniversary: AnniversaryData?
+    @Environment(\.managedObjectContext) var managedObjectContext
+       
+    @FetchRequest(entity: AnniversaryData.entity(),
+                 sortDescriptors: [])
+   
+    var anniversaryData: FetchedResults<AnniversaryData>
 
     var body: some View {
         return VStack {
@@ -19,8 +25,7 @@ struct AnniversaryList: View {
                 .buttonStyle(BorderlessButtonStyle())
 
             List(selection: $selectedAnniversary) {
-                ForEach(anniversaies.data) {
-                    anniversary in
+                ForEach(anniversaryData) { anniversary in
                     AnniversaryRow(anniversary: anniversary)
                         .tag(anniversary)
                         .onTapGesture() {
@@ -39,7 +44,16 @@ struct AnniversaryList: View {
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        AnniversaryList(selectedAnniversary: .constant(anniversaries[0]))
-        .environmentObject(Anniversaries())
+        let data = AnniversaryData()
+        data.name = "name"
+        data.id = UUID()
+        data.tag = "work"
+        data.isTop = false
+
+        let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        return AnniversaryList(selectedAnniversary: .constant(data))
+                .environment(\.managedObjectContext, context)
+                .environmentObject(Anniversaries())
     }
 }
