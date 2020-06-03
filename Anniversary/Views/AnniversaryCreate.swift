@@ -19,6 +19,7 @@ struct AnniversaryCreate: View {
     @State private var anniversaryDate = Date()
     @State var name: String = "纪念日"
     @State private var selectedTag = 0
+    @Environment(\.managedObjectContext) var managedObjectContext
 
 
     var body: some View {
@@ -53,21 +54,19 @@ struct AnniversaryCreate: View {
     }
 
     func createAnniversary() {
-//        let anniversary = AnniversaryData(context: context)
-//        anniversary.id = UUID()
-//        anniversary.name = name
-//        anniversary.date = anniversaryDate
-//        anniversary.tag = tags[selectedTag]
-//        anniversary.isTop = false
+        let anniversary = AnniversaryData(context: self.managedObjectContext)
+        anniversary.id = UUID()
+        anniversary.name = name
+        anniversary.date = anniversaryDate
+        anniversary.tag = tags[selectedTag]
+        anniversary.isTop = false
 
-//         appDelegate.saveContext()
-//         print(name, anniversaryDate, tags[selectedTag])
-//         do {
-//             let data = try context.fetch(AnniversaryData.fetchRequest())
-//             print("second data", data)
-//         } catch {
-//             print("error")
-//         }
+        do {
+            try self.managedObjectContext.save()
+            print("Order saved.")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
