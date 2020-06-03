@@ -14,19 +14,19 @@ struct AnniversaryRow: View {
     var body: some View {
         HStack(alignment: .center) {
             Text(anniversary.tag)
-                .frame(width: 100)
+                .frame(width: 80)
             
             VStack {
                 Text(anniversary.name)
                     .frame(height: 20)
-//                Text(anniversary.date)
-//                    .frame(height: 20)
+                Text(startDate)
+                    .frame(height: 20)
             }
             .padding()
 
             HStack {
                 Text("已经过了")
-                Text("\(getCountdownDate)")
+                Text("\(countdownDate)")
                 Text("天")
                 Spacer()
             }
@@ -42,15 +42,25 @@ struct AnniversaryRow: View {
             .fill(tagColor.opacity(0.6)))
     }
     
-    var getCountdownDate: String {
-//        let dateB = DateInRegion("2017-07-23 12:00:00", format: "YYYY-MM-dd", region: rome)!
-//        let days = dateA?.getInterval(toDate: dateB, component: .day)
-//        if days != nil {
-//            return String(days)
-//        }
-//        return "0"
+    var startDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: anniversary.date)
+    }
+    
+    var countdownDate: String {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
         
-        return "100"
+        let fromDate = formatter.date(from: formatter.string(from: anniversary.date)) ?? Date()
+        let toDate = formatter.date(from: formatter.string(from: Date()))!
+        let days = calendar.dateComponents([.day],
+                                           from: fromDate,
+                                           to: toDate)
+            .day ?? 0
+        
+        return "\(days)"
     }
 
     var tagColor: Color {
