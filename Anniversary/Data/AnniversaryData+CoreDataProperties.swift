@@ -27,7 +27,6 @@ extension AnniversaryData: Identifiable {
         set {tag = newValue.rawValue}
         get {Tag(rawValue: tag) ?? .life}
     }
-
 }
 
 enum Tag: String {

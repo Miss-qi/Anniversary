@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AnniversaryDetail: View {
     var anniversary: AnniversaryData
+    var anniversaryService = AnniversaryService()
 
     var body: some View {
         VStack(alignment: .center) {
@@ -34,24 +35,11 @@ struct AnniversaryDetail: View {
     }
     
     var startDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        return formatter.string(from: anniversary.date)
+        return anniversaryService.formattedDate(date: anniversary.date)
     }
     
     var countdownDate: String {
-        let calendar = Calendar.current
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        
-        let fromDate = formatter.date(from: formatter.string(from: anniversary.date)) ?? Date()
-        let toDate = formatter.date(from: formatter.string(from: Date()))!
-        let days = calendar.dateComponents([.day],
-                                           from: fromDate,
-                                           to: toDate)
-            .day ?? 0
-        
-        return "\(days)"
+        return anniversaryService.countdownDays(fromDate: anniversary.date)
     }
 }
 

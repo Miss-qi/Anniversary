@@ -26,6 +26,7 @@
 		7F8EBDA1248635CD005D96DD /* AnniversaryData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD9F248635CD005D96DD /* AnniversaryData+CoreDataClass.swift */; };
 		7F8EBDA2248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */; };
 		7F8EBDA3248637D8005D96DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8EBD41247F50F2005D96DD /* Main.storyboard */; };
+		7F8EBDEC24879065005D96DD /* AnniversaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBDEB24879065005D96DD /* AnniversaryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		7F8EBD9D24863580005D96DD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7F8EBD9F248635CD005D96DD /* AnniversaryData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7F8EBDEB24879065005D96DD /* AnniversaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				7F8EBD6F247F5704005D96DD /* Data.swift */,
 				7F8EBD75247F678F005D96DD /* Anniversaries.swift */,
+				7F8EBDEB24879065005D96DD /* AnniversaryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */,
 				7F8EBD39247F50F0005D96DD /* AppDelegate.swift in Sources */,
 				7F8EBD70247F5704005D96DD /* Data.swift in Sources */,
+				7F8EBDEC24879065005D96DD /* AnniversaryService.swift in Sources */,
 				7F8EBD812480BB72005D96DD /* AnniversaryCreate.swift in Sources */,
 				7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */,
 			);
