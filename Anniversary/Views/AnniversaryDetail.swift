@@ -45,14 +45,6 @@ struct AnniversaryDetail: View {
 
 struct AnniversaryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        let data = AnniversaryData()
-        data.name = ""
-        data.id = UUID()
-        data.tag = "work"
-        data.isTop = false
-        data.date = Date()
-        
-
-        return AnniversaryDetail(anniversary: data)
+        return AnniversaryDetail(anniversary: Anniversaries.getPreviewData())
     }
 }

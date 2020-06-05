@@ -27,13 +27,7 @@ struct NavigationDetail: View {
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        let data = AnniversaryData()
-        data.name = ""
-        data.id = UUID()
-        data.tag = "work"
-        data.isTop = false
-        
-        return NavigationDetail(selectedAnniversary: data)
+        return NavigationDetail(selectedAnniversary: Anniversaries.getPreviewData())
         .environmentObject(Anniversaries())
     }
 }

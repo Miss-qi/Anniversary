@@ -11,4 +11,20 @@ import Combine
 
 final class Anniversaries: ObservableObject {
     @Published var createAnniversary: Bool = false
+    
+    static func getPreviewData() -> AnniversaryData {
+        let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let data = AnniversaryData(context: context)
+          data.name = "name"
+          data.id = UUID()
+          data.tag = "work"
+          data.isTop = false
+          data.date = Date()
+        return data;
+    }
+    
+    static func getContext() -> NSManagedObjectContext {
+        let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        return context
+    }
 }

@@ -44,16 +44,8 @@ struct AnniversaryList: View {
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        let data = AnniversaryData()
-        data.name = "name"
-        data.id = UUID()
-        data.tag = "work"
-        data.isTop = false
-
-        let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-        return AnniversaryList(selectedAnniversary: .constant(data))
-                .environment(\.managedObjectContext, context)
+        return AnniversaryList(selectedAnniversary: .constant(Anniversaries.getPreviewData()))
+            .environment(\.managedObjectContext, Anniversaries.getContext())
                 .environmentObject(Anniversaries())
     }
 }

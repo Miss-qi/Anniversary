@@ -21,13 +21,8 @@ struct NavigationMaster: View {
 
 struct NavigationMaster_Previews: PreviewProvider {
     static var previews: some View {
-        let data = AnniversaryData()
-        data.name = ""
-        data.id = UUID()
-        data.tag = "work"
-        data.isTop = false
-        
-        return NavigationMaster(selectedAnniversary: .constant(data))
+        return NavigationMaster(selectedAnniversary: .constant(Anniversaries.getPreviewData()))
+            .environment(\.managedObjectContext, Anniversaries.getContext())
             .environmentObject(Anniversaries())
     }
 }

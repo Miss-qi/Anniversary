@@ -66,12 +66,7 @@ struct AnniversaryRow: View {
 
 struct AnniversaryRow_Previews: PreviewProvider {
     static var previews: some View {
-        let data = AnniversaryData()
-        data.name = "name"
-        data.id = UUID()
-        data.tag = "work"
-        data.isTop = false
-        return AnniversaryRow(anniversary: data)
+        return AnniversaryRow(anniversary: Anniversaries.getPreviewData())
     }
 }
 
