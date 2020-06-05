@@ -16,7 +16,7 @@ final class Anniversaries: ObservableObject {
         let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let data = AnniversaryData(context: context)
           data.name = "name"
-          data.id = UUID()
+          data.myId = UUID()
           data.tag = "work"
           data.isTop = false
           data.date = Date()

@@ -12,17 +12,22 @@ struct AnniversaryList: View {
     @EnvironmentObject private var anniversaies: Anniversaries
     @Binding var selectedAnniversary: AnniversaryData?
     @Environment(\.managedObjectContext) var managedObjectContext
-       
+
     @FetchRequest(entity: AnniversaryData.entity(),
                  sortDescriptors: [])
-   
+
     var anniversaryData: FetchedResults<AnniversaryData>
 
     var body: some View {
         return VStack {
-            Button("添加" ,action: addItem)
-                .frame(maxWidth: .infinity, maxHeight: 40)
-                .buttonStyle(BorderlessButtonStyle())
+            HStack {
+                Button("添加" ,action: addItem)
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .buttonStyle(BorderlessButtonStyle())
+                Button("删除" ,action: deleteItem)
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .buttonStyle(BorderlessButtonStyle())
+            }
 
             List(selection: $selectedAnniversary) {
                 ForEach(anniversaryData) { anniversary in
@@ -39,6 +44,21 @@ struct AnniversaryList: View {
 
     func addItem() {
         self.anniversaies.createAnniversary = true
+    }
+
+    func deleteItem() {
+        if selectedAnniversary != nil {
+            self.anniversaies.createAnniversary = true
+            self.managedObjectContext.delete(selectedAnniversary!)
+            selectedAnniversary = nil
+
+            do {
+                try self.managedObjectContext.save()
+                print("Order saved.")
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

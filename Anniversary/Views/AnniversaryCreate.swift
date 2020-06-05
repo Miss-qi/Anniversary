@@ -55,7 +55,7 @@ struct AnniversaryCreate: View {
 
     func createAnniversary() {
         let anniversary = AnniversaryData(context: self.managedObjectContext)
-        anniversary.id = UUID()
+        anniversary.myId = UUID()
         anniversary.name = name
         anniversary.date = anniversaryDate
         anniversary.tag = tags[selectedTag]
