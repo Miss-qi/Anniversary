@@ -22,15 +22,20 @@ extension AnniversaryData: Identifiable {
     @NSManaged public var tag: String
     @NSManaged public var isTop: Bool
     @NSManaged public var date: Date
-    
-    var currentTag: Tag {
-        set {tag = newValue.rawValue}
-        get {Tag(rawValue: tag) ?? .life}
-    }
-}
 
-enum Tag: String {
-    case life = "Life"
-    case work = "Work"
-    case anniversary = "Anniversay"
+    var tagText: String {
+        set {tag = newValue}
+        get {
+            switch tag {
+            case "work":
+                return "工作"
+            case "life":
+                return "生活"
+            case "anniversary":
+                return "纪念日"
+            default:
+                return "纪念日"
+            }
+        }
+    }
 }

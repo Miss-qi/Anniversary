@@ -14,15 +14,16 @@ struct AnniversaryRow: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Text(anniversary.tag)
-                .frame(width: 80)
-            
+            Text(anniversary.tagText)
+                .frame(width: 60)
+
             VStack {
                 Text(anniversary.name)
                     .frame(height: 20)
                 Text(startDate)
                     .frame(height: 20)
             }
+            .frame(width: 80)
             .padding()
 
             HStack {
@@ -42,11 +43,11 @@ struct AnniversaryRow: View {
         .background(RoundedRectangle(cornerRadius: 10)
             .fill(tagColor.opacity(0.6)))
     }
-    
+
     var startDate: String {
         return anniversaryService.formattedDate(date: anniversary.date)
     }
-    
+
     var countdownDate: String {
         return anniversaryService.countdownDays(fromDate: anniversary.date)
     }

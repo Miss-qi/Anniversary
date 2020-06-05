@@ -50,6 +50,8 @@ struct AnniversaryDetail_Previews: PreviewProvider {
         data.id = UUID()
         data.tag = "work"
         data.isTop = false
+        data.date = Date()
+        
 
         return AnniversaryDetail(anniversary: data)
     }
