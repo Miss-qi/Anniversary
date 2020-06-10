@@ -17,8 +17,8 @@ struct AnniversaryCreate: View {
     }
 
     @State private var anniversaryDate = Date()
-    @State var name: String = "纪念日"
-    @State private var selectedTag = 0
+    @State var name: String = ""
+    @State private var selectedTag = "工作"
     @Environment(\.managedObjectContext) var managedObjectContext
 
 
@@ -28,7 +28,7 @@ struct AnniversaryCreate: View {
             HStack {
                 Text("名称")
                 TextField("请输入名称", text: $name)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.blue)
             }
                 .frame(width: 200)
@@ -38,8 +38,8 @@ struct AnniversaryCreate: View {
                 .datePickerStyle(FieldDatePickerStyle())
 
             Picker(selection: $selectedTag, label: Text("类型")) {
-               ForEach(0 ..< tags.count) {
-                  Text(self.tags[$0])
+                ForEach(tags, id: \.self) { tag in
+                  Text(tag)
                }
             }
                 .frame(width: 200)
@@ -59,7 +59,7 @@ struct AnniversaryCreate: View {
         anniversary.myId = UUID()
         anniversary.name = name
         anniversary.date = anniversaryDate
-        anniversary.tag = tags[selectedTag]
+        anniversary.tag = selectedTag
         anniversary.isTop = false
 
         do {

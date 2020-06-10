@@ -33,7 +33,7 @@ struct AnniversaryDetail: View {
 
                 HStack {
                     Spacer()
-                    Text("起始日：" + startDate)
+                    Text("目标日：" + startDate)
                     Spacer()
                 }
                 .padding()
