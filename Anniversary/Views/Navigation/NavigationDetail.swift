@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NavigationDetail: View {
-    @EnvironmentObject var anniversaies: Anniversaries
+    @EnvironmentObject var anniversaies: AnniversaryStore
     var selectedAnniversary: AnniversaryData?
 
     var body: some View {
@@ -27,7 +27,7 @@ struct NavigationDetail: View {
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return NavigationDetail(selectedAnniversary: Anniversaries.getPreviewData())
-        .environmentObject(Anniversaries())
+        return NavigationDetail(selectedAnniversary: PreviewService.getPreviewData())
+        .environmentObject(AnniversaryStore())
     }
 }

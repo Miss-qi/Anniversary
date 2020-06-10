@@ -17,7 +17,7 @@
 		7F8EBD70247F5704005D96DD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD6F247F5704005D96DD /* Data.swift */; };
 		7F8EBD72247F5780005D96DD /* AnniversaryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD71247F5780005D96DD /* AnniversaryRow.swift */; };
 		7F8EBD74247F578E005D96DD /* AnniversaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD73247F578E005D96DD /* AnniversaryList.swift */; };
-		7F8EBD76247F678F005D96DD /* Anniversaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD75247F678F005D96DD /* Anniversaries.swift */; };
+		7F8EBD76247F678F005D96DD /* AnniversaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD75247F678F005D96DD /* AnniversaryStore.swift */; };
 		7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */; };
 		7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */; };
 		7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */; };
@@ -28,6 +28,7 @@
 		7F8EBDA3248637D8005D96DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8EBD41247F50F2005D96DD /* Main.storyboard */; };
 		7F8EBDEC24879065005D96DD /* AnniversaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBDEB24879065005D96DD /* AnniversaryService.swift */; };
 		7FD5A848248A37C800252823 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5A847248A37C800252823 /* CommonButton.swift */; };
+		7FD5A8502490BD2100252823 /* PreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5A84F2490BD2100252823 /* PreviewService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,7 @@
 		7F8EBD6F247F5704005D96DD /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7F8EBD71247F5780005D96DD /* AnniversaryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryRow.swift; sourceTree = "<group>"; };
 		7F8EBD73247F578E005D96DD /* AnniversaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryList.swift; sourceTree = "<group>"; };
-		7F8EBD75247F678F005D96DD /* Anniversaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anniversaries.swift; sourceTree = "<group>"; };
+		7F8EBD75247F678F005D96DD /* AnniversaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryStore.swift; sourceTree = "<group>"; };
 		7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryDetail.swift; sourceTree = "<group>"; };
 		7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMaster.swift; sourceTree = "<group>"; };
 		7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDetail.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7F8EBDEB24879065005D96DD /* AnniversaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryService.swift; sourceTree = "<group>"; };
 		7FD5A847248A37C800252823 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		7FD5A84F2490BD2100252823 /* PreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,8 @@
 		7F8EBD37247F50F0005D96DD /* Anniversary */ = {
 			isa = PBXGroup;
 			children = (
-				7F8EBD8F2484B048005D96DD /* Data */,
+				7FD5A84E2490BCD800252823 /* Store */,
+				7F8EBD8F2484B048005D96DD /* CoreData */,
 				7F8EBD6E247F56F1005D96DD /* Services */,
 				7F8EBD69247F537D005D96DD /* Resources */,
 				7F8EBD68247F5321005D96DD /* Models */,
@@ -147,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7F8EBD3F247F50F2005D96DD /* Preview Assets.xcassets */,
+				7FD5A84F2490BD2100252823 /* PreviewService.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -172,12 +176,11 @@
 		7F8EBD67247F531A005D96DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FD5A84D2490BC4000252823 /* Navigation */,
 				7FD5A844248A372600252823 /* Common */,
 				7F8EBD71247F5780005D96DD /* AnniversaryRow.swift */,
 				7F8EBD73247F578E005D96DD /* AnniversaryList.swift */,
 				7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */,
-				7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */,
-				7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */,
 				7F8EBD802480BB72005D96DD /* AnniversaryCreate.swift */,
 			);
 			path = Views;
@@ -204,19 +207,18 @@
 			isa = PBXGroup;
 			children = (
 				7F8EBD6F247F5704005D96DD /* Data.swift */,
-				7F8EBD75247F678F005D96DD /* Anniversaries.swift */,
 				7F8EBDEB24879065005D96DD /* AnniversaryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		7F8EBD8F2484B048005D96DD /* Data */ = {
+		7F8EBD8F2484B048005D96DD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */,
 				7F8EBD9F248635CD005D96DD /* AnniversaryData+CoreDataClass.swift */,
 			);
-			path = Data;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		7FD5A844248A372600252823 /* Common */ = {
@@ -225,6 +227,23 @@
 				7FD5A847248A37C800252823 /* CommonButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7FD5A84D2490BC4000252823 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7F8EBD7C247FBE5A005D96DD /* NavigationMaster.swift */,
+				7F8EBD7E247FBFC2005D96DD /* NavigationDetail.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7FD5A84E2490BCD800252823 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7F8EBD75247F678F005D96DD /* AnniversaryStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +386,7 @@
 				7FD5A848248A37C800252823 /* CommonButton.swift in Sources */,
 				7F8EBDA2248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift in Sources */,
 				7F8EBD9E24863580005D96DD /* AnniversaryData.xcdatamodeld in Sources */,
-				7F8EBD76247F678F005D96DD /* Anniversaries.swift in Sources */,
+				7F8EBD76247F678F005D96DD /* AnniversaryStore.swift in Sources */,
 				7F8EBD74247F578E005D96DD /* AnniversaryList.swift in Sources */,
 				7F8EBD7F247FBFC2005D96DD /* NavigationDetail.swift in Sources */,
 				7F8EBDA1248635CD005D96DD /* AnniversaryData+CoreDataClass.swift in Sources */,
@@ -375,6 +394,7 @@
 				7F8EBD7D247FBE5A005D96DD /* NavigationMaster.swift in Sources */,
 				7F8EBD39247F50F0005D96DD /* AppDelegate.swift in Sources */,
 				7F8EBD70247F5704005D96DD /* Data.swift in Sources */,
+				7FD5A8502490BD2100252823 /* PreviewService.swift in Sources */,
 				7F8EBDEC24879065005D96DD /* AnniversaryService.swift in Sources */,
 				7F8EBD812480BB72005D96DD /* AnniversaryCreate.swift in Sources */,
 				7F8EBD7B247FBA2C005D96DD /* AnniversaryDetail.swift in Sources */,

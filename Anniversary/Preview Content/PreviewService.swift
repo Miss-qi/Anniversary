@@ -1,17 +1,14 @@
 //
-//  Anniversaries.swift
+//  PreviewService.swift
 //  Anniversary
 //
-//  Created by Yanzi Qi  on 2020/5/28.
+//  Created by Yanzi Qi  on 2020/6/10.
 //  Copyright © 2020 yzqi. All rights reserved.
 //
 
 import SwiftUI
-import Combine
 
-final class Anniversaries: ObservableObject {
-    @Published var createAnniversary: Bool = false
-    
+class PreviewService {
     static func getPreviewData() -> AnniversaryData {
         let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let data = AnniversaryData(context: context)

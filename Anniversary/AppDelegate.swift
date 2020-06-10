@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let contentView = ContentView()
             .environment(\.managedObjectContext, context)
-            .environmentObject(Anniversaries())
+            .environmentObject(AnniversaryStore())
 
         // Create the window and set the content view. 
         window = NSWindow(

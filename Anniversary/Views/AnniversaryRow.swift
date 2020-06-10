@@ -69,7 +69,7 @@ struct AnniversaryRow: View {
 
 struct AnniversaryRow_Previews: PreviewProvider {
     static var previews: some View {
-        return AnniversaryRow(anniversary: Anniversaries.getPreviewData())
+        return AnniversaryRow(anniversary: PreviewService.getPreviewData())
     }
 }
 

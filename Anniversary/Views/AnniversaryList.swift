@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnniversaryList: View {
-    @EnvironmentObject private var anniversaies: Anniversaries
+    @EnvironmentObject private var anniversaies: AnniversaryStore
     @Binding var selectedAnniversary: AnniversaryData?
     @Environment(\.managedObjectContext) var managedObjectContext
 
@@ -60,8 +60,8 @@ struct AnniversaryList: View {
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        return AnniversaryList(selectedAnniversary: .constant(Anniversaries.getPreviewData()))
-            .environment(\.managedObjectContext, Anniversaries.getContext())
-                .environmentObject(Anniversaries())
+        return AnniversaryList(selectedAnniversary: .constant(PreviewService.getPreviewData()))
+            .environment(\.managedObjectContext, PreviewService.getContext())
+                .environmentObject(AnniversaryStore())
     }
 }

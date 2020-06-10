@@ -66,6 +66,6 @@ struct AnniversaryDetail: View {
 
 struct AnniversaryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return AnniversaryDetail(anniversary: Anniversaries.getPreviewData())
+        return AnniversaryDetail(anniversary: PreviewService.getPreviewData())
     }
 }
