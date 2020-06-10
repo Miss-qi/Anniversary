@@ -28,5 +28,9 @@ class AnniversaryService {
         
         return "\(days)"
     }
+    
+    func getDescription(fromDate: Date) -> String {
+        return Int(countdownDays(fromDate: fromDate)) ?? 0 > 0 ? "已经过了" : "还有"
+    }
 
 }

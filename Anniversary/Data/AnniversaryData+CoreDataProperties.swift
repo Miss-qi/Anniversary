@@ -23,19 +23,19 @@ extension AnniversaryData: Identifiable {
     @NSManaged public var isTop: Bool
     @NSManaged public var date: Date
 
-    var tagText: String {
-        set {tag = newValue}
-        get {
-            switch tag {
-            case "work":
-                return "工作"
-            case "life":
-                return "生活"
-            case "anniversary":
-                return "纪念日"
-            default:
-                return "纪念日"
-            }
-        }
-    }
+//    var tagText: String {
+//        set {tag = newValue}
+//        get {
+//            switch tag {
+//            case "work":
+//                return "工作"
+//            case "life":
+//                return "生活"
+//            case "anniversary":
+//                return "纪念日"
+//            default:
+//                return "纪念日"
+//            }
+//        }
+//    }
 }

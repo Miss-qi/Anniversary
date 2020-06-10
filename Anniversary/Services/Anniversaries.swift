@@ -17,7 +17,7 @@ final class Anniversaries: ObservableObject {
         let data = AnniversaryData(context: context)
           data.name = "name"
           data.myId = UUID()
-          data.tag = "work"
+          data.tag = "生活"
           data.isTop = false
           data.date = Date()
         return data;

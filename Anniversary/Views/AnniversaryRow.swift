@@ -14,7 +14,7 @@ struct AnniversaryRow: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Text(anniversary.tagText)
+            Text(anniversary.tag)
                 .frame(width: 60)
 
             VStack {
@@ -27,9 +27,7 @@ struct AnniversaryRow: View {
             .padding()
 
             HStack {
-                Text("已经过了")
-                Text("\(countdownDate)")
-                Text("天")
+                Text(description + " " + countdownDate + " 天")
                 Spacer()
             }
             .padding()
@@ -43,21 +41,26 @@ struct AnniversaryRow: View {
         .background(RoundedRectangle(cornerRadius: 10)
             .fill(tagColor.opacity(0.6)))
     }
+    
+    var description: String {
+        return anniversaryService.getDescription(fromDate: anniversary.date)
+    }
 
     var startDate: String {
         return anniversaryService.formattedDate(date: anniversary.date)
     }
 
     var countdownDate: String {
-        return anniversaryService.countdownDays(fromDate: anniversary.date)
+        let days = anniversaryService.countdownDays(fromDate: anniversary.date)
+        return days.replacingOccurrences(of: "-", with: "")
     }
 
     var tagColor: Color {
-        if anniversary.tag == "work" {
+        if anniversary.tag == "工作" {
             return .blue
-        } else if anniversary.tag == "life" {
+        } else if anniversary.tag == "生活" {
             return .green
-        } else if anniversary.tag == "anniversary" {
+        } else if anniversary.tag == "纪念日" {
             return .orange
         }
         return .gray
