@@ -27,6 +27,7 @@
 		7F8EBDA2248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */; };
 		7F8EBDA3248637D8005D96DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8EBD41247F50F2005D96DD /* Main.storyboard */; };
 		7F8EBDEC24879065005D96DD /* AnniversaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EBDEB24879065005D96DD /* AnniversaryService.swift */; };
+		7FD5A848248A37C800252823 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5A847248A37C800252823 /* CommonButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		7F8EBD9F248635CD005D96DD /* AnniversaryData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7F8EBDA0248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnniversaryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7F8EBDEB24879065005D96DD /* AnniversaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryService.swift; sourceTree = "<group>"; };
+		7FD5A847248A37C800252823 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		7F8EBD67247F531A005D96DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FD5A844248A372600252823 /* Common */,
 				7F8EBD71247F5780005D96DD /* AnniversaryRow.swift */,
 				7F8EBD73247F578E005D96DD /* AnniversaryList.swift */,
 				7F8EBD7A247FBA2C005D96DD /* AnniversaryDetail.swift */,
@@ -214,6 +217,14 @@
 				7F8EBD9F248635CD005D96DD /* AnniversaryData+CoreDataClass.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		7FD5A844248A372600252823 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7FD5A847248A37C800252823 /* CommonButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 			files = (
 				7F8EBD6D247F560E005D96DD /* Anniversary.swift in Sources */,
 				7F8EBD72247F5780005D96DD /* AnniversaryRow.swift in Sources */,
+				7FD5A848248A37C800252823 /* CommonButton.swift in Sources */,
 				7F8EBDA2248635CD005D96DD /* AnniversaryData+CoreDataProperties.swift in Sources */,
 				7F8EBD9E24863580005D96DD /* AnniversaryData.xcdatamodeld in Sources */,
 				7F8EBD76247F678F005D96DD /* Anniversaries.swift in Sources */,

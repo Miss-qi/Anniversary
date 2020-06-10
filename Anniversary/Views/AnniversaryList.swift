@@ -21,12 +21,8 @@ struct AnniversaryList: View {
     var body: some View {
         return VStack {
             HStack {
-                Button("添加" ,action: addItem)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .buttonStyle(BorderlessButtonStyle())
-                Button("删除" ,action: deleteItem)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .buttonStyle(BorderlessButtonStyle())
+                CommonButton(buttonText: "添加", handleAction: addItem)
+                CommonButton(buttonText: "删除", handleAction: deleteItem)
             }
 
             List(selection: $selectedAnniversary) {

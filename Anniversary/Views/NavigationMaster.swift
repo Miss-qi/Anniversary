@@ -15,7 +15,7 @@ struct NavigationMaster: View {
             AnniversaryList(selectedAnniversary: $selectedAnniversary)
                 .listStyle(SidebarListStyle())
         }
-        .frame(minWidth: 400, maxWidth: 500)
+        .frame(width: 400)
     }
 }
 
