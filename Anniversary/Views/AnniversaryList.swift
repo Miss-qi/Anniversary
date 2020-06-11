@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct AnniversaryList: View {
-    @EnvironmentObject private var anniversaies: AnniversaryStore
-    @Binding var selectedAnniversary: AnniversaryData?
+    @EnvironmentObject private var anniversaryStore: AnniversaryStore
     @Environment(\.managedObjectContext) var managedObjectContext
     var tags = ["工作", "生活", "纪念日"]
     @State var filter = "工作"
@@ -41,13 +40,13 @@ struct AnniversaryList: View {
                }
            }
 
-            List(selection: $selectedAnniversary) {
+        List(selection: $anniversaryStore.selectedAnniversary) {
                 ForEach(anniversaryData) { anniversary in
                     AnniversaryRow(anniversary: anniversary)
                         .tag(anniversary)
                         .onTapGesture() {
-                            self.anniversaies.createAnniversary = false
-                            self.selectedAnniversary = anniversary
+                            self.anniversaryStore.createAnniversary = false
+                            self.anniversaryStore.selectedAnniversary = anniversary
                         }
                 }
             }
@@ -55,14 +54,14 @@ struct AnniversaryList: View {
     }
 
     func addItem() {
-        self.anniversaies.createAnniversary = true
+        self.anniversaryStore.createAnniversary = true
     }
 
     func deleteItem() {
-        if selectedAnniversary != nil {
-            self.anniversaies.createAnniversary = true
-            self.managedObjectContext.delete(selectedAnniversary!)
-            selectedAnniversary = nil
+        if anniversaryStore.selectedAnniversary != nil {
+            self.anniversaryStore.createAnniversary = true
+            self.managedObjectContext.delete(anniversaryStore.selectedAnniversary!)
+            anniversaryStore.selectedAnniversary = nil
 
             do {
                 try self.managedObjectContext.save()
@@ -76,7 +75,7 @@ struct AnniversaryList: View {
 
 struct AnniversaryList_Previews: PreviewProvider {
     static var previews: some View {
-        return AnniversaryList(selectedAnniversary: .constant(PreviewService.getPreviewData()))
+        return AnniversaryList()
             .environment(\.managedObjectContext, PreviewService.getContext())
                 .environmentObject(AnniversaryStore())
     }

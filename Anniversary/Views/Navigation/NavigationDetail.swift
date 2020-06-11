@@ -9,16 +9,15 @@
 import SwiftUI
 
 struct NavigationDetail: View {
-    @EnvironmentObject var anniversaies: AnniversaryStore
-    var selectedAnniversary: AnniversaryData?
+    @EnvironmentObject var anniversaryStore: AnniversaryStore
 
     var body: some View {
         VStack {
             Spacer()
-            if anniversaies.createAnniversary == true {
+            if anniversaryStore.createAnniversary == true {
                 AnniversaryCreate()
-            } else if selectedAnniversary != nil {
-                AnniversaryDetail(anniversary: selectedAnniversary!)
+            } else if anniversaryStore.selectedAnniversary != nil {
+                AnniversaryDetail()
             }
             Spacer()
         }
@@ -27,7 +26,7 @@ struct NavigationDetail: View {
 
 struct NavigationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return NavigationDetail(selectedAnniversary: PreviewService.getPreviewData())
+        return NavigationDetail()
         .environmentObject(AnniversaryStore())
     }
 }

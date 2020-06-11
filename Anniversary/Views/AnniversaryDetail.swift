@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnniversaryDetail: View {
-    var anniversary: AnniversaryData
+    @EnvironmentObject private var anniversaryStore: AnniversaryStore
     var anniversaryService = AnniversaryService()
 
     var body: some View {
@@ -49,15 +49,20 @@ struct AnniversaryDetail: View {
         .padding()
         .frame(maxWidth: 700)
     }
-    
+
+    var anniversary: AnniversaryData {
+//        return PreviewService.getPreviewData() // only for preview
+        return anniversaryStore.selectedAnniversary!
+    }
+
     var description: String {
         return anniversaryService.getDescription(fromDate: anniversary.date)
     }
-    
+
     var startDate: String {
         return anniversaryService.formattedDate(date: anniversary.date)
     }
-    
+
     var countdownDate: String {
         let days = anniversaryService.countdownDays(fromDate: anniversary.date)
         return days.replacingOccurrences(of: "-", with: "")
@@ -66,6 +71,6 @@ struct AnniversaryDetail: View {
 
 struct AnniversaryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return AnniversaryDetail(anniversary: PreviewService.getPreviewData())
+        return AnniversaryDetail()
     }
 }

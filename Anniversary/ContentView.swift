@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedAnniversary: AnniversaryData?
 
     var body: some View {
         NavigationView {
-            NavigationMaster(selectedAnniversary: $selectedAnniversary)
-            NavigationDetail(selectedAnniversary: selectedAnniversary)
+            NavigationMaster()
+            NavigationDetail()
         }
             .frame(minWidth: 700, minHeight: 500)
     }

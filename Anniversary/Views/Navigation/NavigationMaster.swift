@@ -9,10 +9,9 @@
 import SwiftUI
 
 struct NavigationMaster: View {
-    @Binding var selectedAnniversary: AnniversaryData?
     var body: some View {
         VStack {
-            AnniversaryList(selectedAnniversary: $selectedAnniversary)
+            AnniversaryList()
                 .listStyle(SidebarListStyle())
         }
         .frame(width: 400)
@@ -21,7 +20,7 @@ struct NavigationMaster: View {
 
 struct NavigationMaster_Previews: PreviewProvider {
     static var previews: some View {
-        return NavigationMaster(selectedAnniversary: .constant(PreviewService.getPreviewData()))
+        return NavigationMaster()
             .environment(\.managedObjectContext, PreviewService.getContext())
             .environmentObject(AnniversaryStore())
     }

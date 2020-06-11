@@ -11,4 +11,5 @@ import Combine
 
 final class AnniversaryStore: ObservableObject {
     @Published var createAnniversary: Bool = false
+    @Published var selectedAnniversary: AnniversaryData?
 }
