@@ -10,6 +10,6 @@ import SwiftUI
 import Combine
 
 final class AnniversaryStore: ObservableObject {
-    @Published var createAnniversary: Bool = false
+    @Published var createAnniversary: Bool = true
     @Published var selectedAnniversary: AnniversaryData?
 }

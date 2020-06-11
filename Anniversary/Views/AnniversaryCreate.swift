@@ -45,7 +45,7 @@ struct AnniversaryCreate: View {
                 .frame(width: 200)
 
             Button(action: createAnniversary) {
-                Text("Submit")
+                Text("保存")
             }
                 .frame(width: 200)
             Spacer()

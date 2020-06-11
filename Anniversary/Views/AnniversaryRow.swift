@@ -41,7 +41,7 @@ struct AnniversaryRow: View {
         .background(RoundedRectangle(cornerRadius: 10)
             .fill(tagColor.opacity(0.6)))
     }
-    
+
     var description: String {
         return anniversaryService.getDescription(fromDate: anniversary.date)
     }
