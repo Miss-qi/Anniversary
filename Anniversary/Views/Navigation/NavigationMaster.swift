@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct NavigationMaster: View {
+    @EnvironmentObject private var anniversaryStore: AnniversaryStore
+
     var body: some View {
         VStack {
-            AnniversaryList()
-                .listStyle(SidebarListStyle())
+            Operations()
+            AnniversaryList(filterTag: anniversaryStore.filterTag)
         }
         .frame(width: 400)
     }

@@ -12,4 +12,5 @@ import Combine
 final class AnniversaryStore: ObservableObject {
     @Published var createAnniversary: Bool = true
     @Published var selectedAnniversary: AnniversaryData?
+    @Published var filterTag: String = "工作"
 }
