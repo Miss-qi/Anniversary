@@ -32,7 +32,14 @@ struct AnniversaryList: View {
     }
     
     init(filterTag: String) {
-        fetchRequest = FetchRequest<AnniversaryData>(entity: AnniversaryData.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tag == %@", filterTag))
+        var condition = [""]
+        if filterTag == "全部" {
+            condition = AnniversaryService.tags
+        } else {
+            condition = [filterTag]
+        }
+
+        fetchRequest = FetchRequest<AnniversaryData>(entity: AnniversaryData.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tag in %@", condition))
 
     }
 }

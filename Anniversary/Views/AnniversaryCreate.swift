@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AnniversaryCreate: View {
-    var tags = ["工作", "生活", "纪念日"]
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -38,7 +37,7 @@ struct AnniversaryCreate: View {
                 .datePickerStyle(FieldDatePickerStyle())
 
             Picker(selection: $selectedTag, label: Text("类型")) {
-                ForEach(tags, id: \.self) { tag in
+                ForEach(AnniversaryService.tags, id: \.self) { tag in
                   Text(tag)
                }
             }

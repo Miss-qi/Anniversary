@@ -11,7 +11,7 @@ import SwiftUI
 struct Operations: View {
     @EnvironmentObject private var anniversaryStore: AnniversaryStore
     @Environment(\.managedObjectContext) var managedObjectContext
-    var tags = ["工作", "生活", "纪念日"]
+    var tags = ["全部", "工作", "生活", "纪念日"]
 
     var body: some View {
         return HStack {
